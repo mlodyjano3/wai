@@ -17,7 +17,7 @@ if ($file){
     }
 
     if (empty($errorrs)) { // brak bledow - kontynuacja
-        require_once '../business/image_processing.php';
+        require_once __DIR__ . '/../business/image_processing.php';
         
         if (handle_img_upload($title, $author, $file)) {
             header('Location: index.php?action=gallery');
