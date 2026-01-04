@@ -1,0 +1,185 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: blanchedalmond;
+}
+
+nav {
+    background-color: rgb(107, 59, 0);
+    text-align: center;
+}
+
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    font-size: 5vw;
+    color: rgb(107, 59, 0);
+    text-align: center;
+    
+}
+
+h2 {
+    font-size: 4vw;
+    color: rgb(107, 59, 0);
+    text-align: center;
+}
+h2 a {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+h3 {
+    font-size: 3vw;
+    color: rgb(107, 59, 0);
+    text-align: center;
+}
+
+h4 {
+    font-size: 2vw;
+    color: rgb(107, 59, 0);
+    text-align: center;
+}
+
+.div_colors {
+    color: blanchedalmond;
+    text-align: center;
+    display: block;
+    padding: 14px 16px;
+}
+
+.div_colors a {
+    color: blanchedalmond;
+    padding: 4px;
+    border: 1px solid blanchedalmond;
+}
+
+
+.opis_szachow {
+    color:rgb(66, 37, 1);
+    font-weight: 600;
+    text-align: center;
+    border: 3px solid rgb(107, 59, 0);
+    margin: 3%;
+    padding: 1%;
+}
+
+.opis_top {
+    color:rgb(66, 37, 1);
+    font-weight: 500;
+    text-align: center;
+    margin: 3%;
+    padding: 1%;
+}
+
+.gracz {
+    border: 3px solid rgb(107, 59, 0);
+    margin: auto;
+    padding: 2%;
+    margin: 2%;
+}
+
+.player_image {
+    border-radius: 3%;
+    margin: auto;
+    height: 40vw;
+}
+
+.table {
+    border: 1px solid rgb(107, 59, 0);
+    color:rgb(66, 37, 1);
+    margin: auto;
+    padding: 3%;
+}
+
+th, td {
+    border: 1px solid rgb(107, 59, 0);
+    color:rgb(66, 37, 1);
+    margin: 0.5%;
+}
+
+
+footer {
+    background-color: rgb(107, 59, 0);
+}
+
+.footerdiv {
+    margin: auto;
+    width: 50%;
+    border: 2px solid navajowhite;
+    padding: 1%;
+    border-top: none;
+}
+
+.footer-heading {
+    font-size: 3vw;
+    color:blanchedalmond;
+    text-align: center;
+}
+
+#color-przelacznik {
+    color: antiquewhite;
+}
+
+
+/* ------ TRYB CIEMNY ----- */
+
+
+body.tryb-ciemny {
+    background-color: #1e1e1e;
+}
+
+body.tryb-ciemny h1,
+body.tryb-ciemny h2,
+body.tryb-ciemny h3,
+body.tryb-ciemny h4 {
+    color: navajowhite;
+}
+
+
+body.tryb-ciemny #opis_szachow,
+body.tryb-ciemny .opis_szachow,
+body.tryb-ciemny .opis_top {
+    color: blanchedalmond;
+    border-color: navajowhite;
+}
+
+
+body.tryb-ciemny nav,
+body.tryb-ciemny footer {
+    background-color: #3a2400;
+}
+
+
+body.tryb-ciemny .div_colors {
+    color: navajowhite;
+}
+
+
+body.tryb-ciemny .table,
+body.tryb-ciemny th,
+body.tryb-ciemny td {
+    color: blanchedalmond;
+    border-color: navajowhite;
+}
+
+
+body.tryb-ciemny .gracz {
+    border-color: navajowhite;
+}
+
+
+body.tryb-ciemny .footerdiv {
+    border-color: #3a2400;
+}
+
+
+body.tryb-ciemny .footer-heading {
+    color: navajowhite;
+}

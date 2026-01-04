@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+    <body>
+        <nav>
+            <div class="topnav">
+                <div class="div_colors">
+                    <a href="index.html">Strona główna</a>
+                </div>
+                <div class="div_colors">
+                    <a href="top_gracze.html">Najlepsi gracze</a>
+                </div>
+                <div class="div_colors">
+                    <a href="galeria.html" class="active">Galeria</a>
+                </div>
+            </div>
+        </nav>
+        <h1 id="top">GALERIA SZACHOWA</h1>
+        
+
+        <div>
+            <h2><a href="#top">Powrót do góry</a></h2>
+        </div>
+
+        <footer class="footer">
+            <div class="footerdiv">
+                <h3 class="footer-heading">Kontakt</h3>
+                <div>
+                    <ul class="ul_colors">
+                        <li>xxxx@xxxx.pl</li>
+                        <li>+48876678543</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footerdiv">
+                <h3 class="footer-heading">Newsletter</h3>
+                <div>
+                    <form action="odbierz.php" method="POST" id="newsletterForm">
+                        <label for="fname">Podaj swoje imię</label><br>
+                        <input type="text" name="fname"><br>
+                        <label for="lname">Podaj swoje nazwisko</label><br>
+                        <input type="text" name="lname"><br>
+                        <label for="email">Podaj swój email</label>
+                        <input type="text" name="email"><br>
+                        <button type="submit">potwierdź</button>
+                    </form>
+                </div>
+            </div>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous" defer></script>
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js" crossorigin="anonymous" defer></script>
+        <script src="./functionalities/jquery_inicjalizacja.js" defer></script>
+        <script src="./functionalities/web_api.js" defer></script>
+        <script src="./functionalities/dom_manipulacja.js" defer></script>
+        <div id="newsletter-potwierdzenie" title="Dziękujemy!">
+            <p>Dziękuję za zapis do newslettera :))</p>
+        </div>
+    </body>
+</html>
