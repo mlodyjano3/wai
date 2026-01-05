@@ -19,27 +19,26 @@ switch ($action) {
         break;
 
     case 'upload':
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-            require_once 'controllers/upload_controller.php';
-        } else {
-            include_once 'views/upload_view.php';
-        }
+        require_once 'controllers/upload_controller.php';
         break;
     
     case 'login':
-
+        require_once 'controllers/login_controller.php';
         break;
         
     case 'logout':
+        session_unset();
         session_destroy();
         header('Location: index.php?action=gallery');
+        exit;
         break;
     
     case 'register':
-        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        require_once 'controllers/registers_controller.php';
+        break;
 
-        };
-        include 'views/register_view.php';
+    case 'saved':
+        require_once 'controllers/saved_controller.php';
         break;
         
     default: 
