@@ -22,7 +22,7 @@ if ($page < 1) $page = 1;
 $skip = ($page - 1) * $pageSize;
 
 // dane
-$images = get_images($skip, $pageSize);
+$images = iterator_to_array(get_images($skip, $pageSize)); 
 $totalImages = get_images_count();
 $totalPages = ceil($totalImages / $pageSize);
 

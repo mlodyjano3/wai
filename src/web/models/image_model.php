@@ -3,35 +3,42 @@ require_once __DIR__ . '/../business/db.php';
 
 function get_images($skip, $limit) {
     $db = get_database();
-
-    $options = [
-        'skip' => $skip,
-        'limit' => $limit,
-        'sort' => ['created_at' => -1]
+    $opts = [
+        'skip' => (int)$skip,
+        'limit' => (int)$limit,
+        'sort' => ['_id' => -1],
     ];
-    
-    return $db->images->find([], $options)->toArray();
+    return $db->images->find([], $opts);
 }
 
 function get_images_count() {
     $db = get_database();
     return $db->images->countDocuments();
-};
+}
 
-function get_images_by_ids($id_strings) {
+function insert_image($image) {
     $db = get_database();
-    $ids = [];
+    return $db->images->insertOne($image);
+}
+
+function get_images_by_ids($ids) {
+    $db = get_database();
+    $query = ['_id' => ['$in' => []]];
     
-    foreach ($id_strings as $id) {
-        try {
-            $ids[] = new MongoDB\BSON\ObjectId($id);
-        } catch (Exception $e) {
-            // Ignorujemy bledne ID
-            continue;
+    if (!empty($ids)) {
+        $object_ids = [];
+        foreach ($ids as $id) {
+            try {
+                $object_ids[] = new MongoDB\BSON\ObjectId($id);
+            } catch (Exception $e) {
+            }
+        }
+        
+        if (!empty($object_ids)) {
+            $query = ['_id' => ['$in' => $object_ids]];
         }
     }
-
-    // Pobieramy tylko te dokumenty, których _id jest na liście $ids
-    $query = ['_id' => ['$in' => $ids]];
+    
     return $db->images->find($query);
 }
+?>

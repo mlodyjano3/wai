@@ -1,17 +1,18 @@
 <?php
-function get_database() {
-    $username = 'wai_web';
-    $password = 'w@i_w3b';
-    $database_nazwa = 'wai';
+require_once __DIR__ . '/../vendor/autoload.php';
 
+function get_database() {
     try {
-        $encoded_password = urlencode($password);
-        
-        $mongo = new MongoDB\Client(
-            "mongodb://{$username}:{$encoded_password}@127.0.0.1:27017/wai"
+        $client = new MongoDB\Client(
+            'mongodb://127.0.0.1:27017/wai', 
+            [
+                'username' => 'wai_web',
+                'password' => 'w@i_w3b',
+            ]
         );
-        return $mongo->selectDatabase($database_nazwa);
+        return $client->wai;
     } catch (Exception $e) {
-        die("Błąd połączenia z bazą danych: " . $e->getMessage());
+        die("Błąd połączenia z bazą: " . $e->getMessage());
     }
 }
+?>
